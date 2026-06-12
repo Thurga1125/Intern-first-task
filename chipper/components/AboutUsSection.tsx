@@ -32,7 +32,7 @@ export default function AboutUsSection() {
             initial={{ opacity: 0, y: 30, rotateX: 15 }}
             animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 30, rotateX: 15 }}
             transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 70 }}
-            className="rounded-[20px] border-2 border-black bg-white/98 px-5 py-6 shadow-[0_12px_0_rgba(0,0,0,0.22)] sm:px-7 sm:py-7 w-full max-w-md"
+            className="rounded-[20px] border-2 border-black bg-white/98 px-5 py-6 shadow-[0_12px_0_rgba(0,0,0,0.22)] sm:px-7 sm:py-7 w-full max-w-xl"
             style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
           >
             <div className="text-center mb-6 sm:mb-7">

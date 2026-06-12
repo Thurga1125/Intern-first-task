@@ -32,7 +32,7 @@ export default function RoadmapSection() {
 
   return (
     <section id="roadmap" className="section-screen relative snap-start bg-transparent">
-      <Image src="/assets/stone-path.png" alt="" fill sizes="100vw" className="object-cover z-0" priority />
+      <Image src="/assets/stone path.png" alt="" fill sizes="100vw" className="object-cover z-0" priority />
 
       <div className="section-inner relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         <motion.div
