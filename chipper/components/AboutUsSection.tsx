@@ -27,23 +27,7 @@ export default function AboutUsSection() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.15)_50%,rgba(0,0,0,0.45)_100%)]" />
 
       <div className="section-inner relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 lg:grid lg:grid-cols-[0.7fr_1.3fr] lg:gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
-            animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
-            transition={{ duration: 0.8, delay: 0.2, type: 'spring', stiffness: 70 }}
-            className="mx-auto flex max-h-[35dvh] w-full max-w-[320px] items-center lg:max-h-[60dvh] lg:max-w-[380px]"
-            style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-          >
-            <Image
-              src="/assets/chipper6.png"
-              alt="Chipper character"
-              width={1042}
-              height={1024}
-              className="max-h-full w-full object-contain drop-shadow-[0_20px_18px_rgba(0,0,0,0.45)]"
-            />
-          </motion.div>
-
+        <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 lg:grid lg:grid-cols-[1.3fr_0.7fr] lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 30, rotateX: 15 }}
             animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 30, rotateX: 15 }}
@@ -87,6 +71,22 @@ export default function AboutUsSection() {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
+            animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
+            transition={{ duration: 0.8, delay: 0.2, type: 'spring', stiffness: 70 }}
+            className="mx-auto flex max-h-[35dvh] w-full max-w-[320px] items-center lg:max-h-[60dvh] lg:max-w-[380px]"
+            style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+          >
+            <Image
+              src="/assets/chipper7.png"
+              alt="Chipper character"
+              width={1042}
+              height={1024}
+              className="max-h-full w-full object-contain drop-shadow-[0_20px_18px_rgba(0,0,0,0.45)]"
+            />
           </motion.div>
         </div>
       </div>
