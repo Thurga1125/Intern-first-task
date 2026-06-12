@@ -197,12 +197,10 @@ export default function CommunitySection() {
                   whileHover={{
                     scale: 1.08,
                     y: -4,
-                    rotateX: 6,
                     boxShadow: '0 16px 0 rgba(0,0,0,0.3)',
                   }}
                   whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
                   className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:text-xl"
-                  style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                 >
                   Join Community
                 </motion.button>
@@ -330,12 +328,10 @@ export default function CommunitySection() {
                     whileHover={{
                       scale: 1.08,
                       y: -4,
-                      rotateX: 6,
                       boxShadow: '0 16px 0 rgba(0,0,0,0.3)',
                     }}
                     whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
                     className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:w-auto sm:text-xl"
-                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
                   >
                     Join Community
                   </motion.button>
