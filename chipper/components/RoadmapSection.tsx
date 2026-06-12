@@ -38,7 +38,7 @@ export default function RoadmapSection() {
         <motion.div
           initial={{ opacity: 0, y: -20, rotateZ: -2 }}
           whileInView={{ opacity: 1, y: 0, rotateZ: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7 }}
           className="mb-4 shrink-0 text-center"
         >
@@ -61,7 +61,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, y: -20, rotateX: -20, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(0)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -75,7 +75,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 01</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[0].body}
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, y: -20, rotateX: -20, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.08, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(1)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -99,7 +99,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 02</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[1].body}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.85, rotateZ: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               animate={{ y: [0, -10, 0], rotate: [0, 2, -2, 0] }}
               transition={{
                 opacity: { duration: 0.7, delay: 0.32, type: 'spring', stiffness: 80 },
@@ -144,7 +144,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: 20, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.16, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(2)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -158,7 +158,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 03</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[2].body}
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: 20, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.24, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(3)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -182,7 +182,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 04</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[3].body}
                 </p>
               </div>
@@ -195,7 +195,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, x: -40, rotateY: -20, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(0)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -209,7 +209,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 01</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[0].body}
                 </p>
               </div>
@@ -219,7 +219,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, x: 40, rotateY: 20, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.08, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(1)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -233,7 +233,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 02</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[1].body}
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, x: -40, rotateY: -20, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.16, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(2)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -257,7 +257,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 03</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[2].body}
                 </p>
               </div>
@@ -267,7 +267,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, x: 40, rotateY: 20, scale: 0.9 }}
               whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.24, type: 'spring', stiffness: 72 }}
               onMouseEnter={() => setHoveredPhase(3)}
               onMouseLeave={() => setHoveredPhase(null)}
@@ -281,7 +281,7 @@ export default function RoadmapSection() {
             >
               <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 04</h3>
-                <p className="mt-2 font-nunito text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[3].body}
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function RoadmapSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.85, rotateZ: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               animate={{ y: [0, -10, 0], rotate: [0, 2, -2, 0] }}
               transition={{
                 opacity: { duration: 0.7, delay: 0.32, type: 'spring', stiffness: 80 },

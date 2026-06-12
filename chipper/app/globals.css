@@ -11,7 +11,7 @@
   --color-chipper-brown: #8B6914;
 
   --font-bubblegum: var(--font-bubblegum-var), cursive;
-  --font-nunito: var(--font-nunito-var), sans-serif;
+  --font-nunito: var(--font-bubblegum-var), cursive;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: var(--font-nunito);
+  font-family: var(--font-bubblegum);
   background-color: #111111;
 }
 

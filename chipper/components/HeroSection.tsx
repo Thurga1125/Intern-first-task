@@ -58,12 +58,13 @@ export default function HeroSection() {
               perspective: 1000,
             }}
             initial={{ opacity: 0, y: 20, x: 0 }}
-            animate={{ opacity: 1, y: 0, x: 0 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="z-20 w-full max-w-md mx-auto lg:absolute lg:top-24 lg:right-8 lg:mx-0"
           >
             <div className="rounded-[8px] border-2 border-black bg-white/95 px-4 py-4 shadow-[0_8px_0_rgba(0,0,0,0.18)] sm:px-5 sm:py-5">
-              <p className="font-nunito text-sm font-bold leading-snug text-[#24180a] sm:text-base">
+              <p className="font-bubblegum text-sm font-semibold leading-normal text-[#24180a] sm:text-base">
                 Welcome to Chipper world! A place full of fun, smiles, and endless adventure.
                 Let&apos;s crack open some joy together! Join Chipper as he bounces through life, spreading positivity wherever he goes. Whether you&apos;re a creator, a collector, or just someone looking for a new adventure, Chipper is all about connecting like-minded individuals through unique experiences. Get ready for a delightful journey with our new favorite character!
               </p>
@@ -79,7 +80,8 @@ export default function HeroSection() {
               perspective: 1000,
             }}
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -15, 0] }}
+            whileInView={{ opacity: 1, scale: 1, y: [0, -15, 0] }}
+            viewport={{ once: false }}
             transition={{
               opacity: { duration: 0.9, delay: 0.3 },
               scale: { duration: 0.9, delay: 0.3, type: 'spring', stiffness: 80 },
@@ -114,7 +116,8 @@ export default function HeroSection() {
             aria-hidden="true"
             className="pointer-events-none z-20 font-bubblegum text-black leading-none select-none text-center lg:absolute lg:bottom-32 lg:right-8 lg:text-right"
             initial={{ opacity: 0, y: 20, x: 0 }}
-            animate={{ opacity: 1, y: 0, x: 0 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <span style={{ fontSize: 'clamp(3rem, 10vw, 6rem)', WebkitTextStroke: '2px #000', paintOrder: 'stroke fill', opacity: 0.92 }}>

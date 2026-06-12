@@ -34,7 +34,7 @@ export default function HowToBuySection() {
         <motion.h2
           initial={{ opacity: 0, y: -20, rotateX: 10 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7, type: 'spring', stiffness: 80 }}
           className="mb-3 shrink-0 text-center font-bubblegum text-black"
           style={{
@@ -52,7 +52,7 @@ export default function HowToBuySection() {
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.9, rotateX: -10 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.75, type: 'spring', stiffness: 78 }}
             className="mx-auto flex max-h-[25dvh] w-full max-w-[300px] items-center lg:max-h-[85dvh] lg:max-w-[700px]"
             style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
@@ -72,7 +72,7 @@ export default function HowToBuySection() {
                 key={step.num}
                 initial={{ opacity: 0, y: 30, rotateX: 30, scale: 0.85 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: i * 0.15, type: 'spring', stiffness: 82 }}
                 onMouseEnter={() => setHoveredStep(i)}
                 onMouseLeave={() => setHoveredStep(null)}
@@ -89,16 +89,16 @@ export default function HowToBuySection() {
                 <motion.span
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.4, delay: i * 0.15 + 0.2 }}
                   className="block font-bubblegum text-xl text-[#FFE234] mb-1"
                 >
                   {step.num}
                 </motion.span>
-                <h3 className="font-nunito text-sm sm:text-lg font-extrabold leading-snug text-black">
+                <h3 className="font-bubblegum text-sm sm:text-lg font-extrabold leading-snug text-black">
                   {step.title}
                 </h3>
-                <p className="mt-2 font-nunito text-[11px] sm:text-sm font-semibold leading-snug text-[#38230d]">
+                <p className="mt-2 font-bubblegum text-[11px] sm:text-sm font-semibold leading-snug text-[#38230d]">
                   {step.body}
                 </p>
               </motion.div>

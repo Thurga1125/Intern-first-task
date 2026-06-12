@@ -12,7 +12,7 @@ const tokenomicsCards = [
 
 export default function AboutUsSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: false, margin: '-100px' });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -30,7 +30,7 @@ export default function AboutUsSection() {
         <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-6 lg:grid lg:grid-cols-[0.7fr_1.3fr] lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
-            animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+            animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 0, y: -30, scale: 0.9, rotateX: -15 }}
             transition={{ duration: 0.8, delay: 0.2, type: 'spring', stiffness: 70 }}
             className="mx-auto flex max-h-[35dvh] w-full max-w-[320px] items-center lg:max-h-[60dvh] lg:max-w-[380px]"
             style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
@@ -46,7 +46,7 @@ export default function AboutUsSection() {
 
           <motion.div
             initial={{ opacity: 0, y: 30, rotateX: 15 }}
-            animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+            animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 30, rotateX: 15 }}
             transition={{ duration: 0.8, delay: 0.3, type: 'spring', stiffness: 70 }}
             className="rounded-[20px] border-2 border-black bg-white/98 px-5 py-6 shadow-[0_12px_0_rgba(0,0,0,0.22)] sm:px-7 sm:py-7 w-full max-w-md"
             style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
@@ -54,7 +54,7 @@ export default function AboutUsSection() {
             <div className="text-center mb-6 sm:mb-7">
               <motion.h3
                 initial={{ opacity: 0, y: -20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="font-bubblegum text-black"
                 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.8rem)' }}
@@ -68,7 +68,7 @@ export default function AboutUsSection() {
                 <motion.div
                   key={card.title}
                   initial={{ opacity: 0, y: 25, scale: 0.9, rotateX: 20 }}
-                  animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : {}}
+                  animate={inView ? { opacity: 1, y: 0, scale: 1, rotateX: 0 } : { opacity: 0, y: 25, scale: 0.9, rotateX: 20 }}
                   transition={{ duration: 0.6, delay: 0.45 + i * 0.12, type: 'spring', stiffness: 120 }}
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}

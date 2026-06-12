@@ -33,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className={`${bubblegumSans.variable} ${nunito.variable} scroll-smooth`}
     >
-      <body className="font-nunito overflow-x-hidden antialiased" style={{ backgroundColor: "#111111" }}>
+      <body className="font-bubblegum overflow-x-hidden antialiased" style={{ backgroundColor: "#111111" }}>
         {children}
       </body>
     </html>

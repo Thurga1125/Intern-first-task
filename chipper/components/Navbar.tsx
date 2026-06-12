@@ -90,7 +90,7 @@ export default function Navbar() {
               <motion.button
                 key={link.label}
                 onClick={() => handleNavClick(link.label, link.href)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 border ${
+                className={`px-4 py-2 rounded-full text-sm font-semibold font-bubblegum transition-all duration-200 border ${
                   active === link.label
                     ? 'bg-white text-black border-black shadow-md'
                     : 'text-black/80 border-transparent hover:bg-white/40'
@@ -145,7 +145,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                   onClick={() => handleNavClick(link.label, link.href)}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 border ${
+                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-semibold font-bubblegum transition-all duration-200 border ${
                     active === link.label
                       ? 'bg-white text-black border-black'
                       : 'text-black/80 border-transparent hover:bg-white/40'

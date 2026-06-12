@@ -54,7 +54,7 @@ export default function CommunitySection() {
             <motion.div
               initial={{ opacity: 0, y: -16, rotateZ: 3, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateZ: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
               className="mb-4 flex shrink-0 justify-center"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
@@ -78,7 +78,7 @@ export default function CommunitySection() {
             <motion.div
               initial={{ opacity: 0, y: -20, scale: 0.9, rotateX: -10 }}
               whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               animate={{ y: [0, -8, 0] }}
               transition={{
                 duration: 0.8,
@@ -107,7 +107,7 @@ export default function CommunitySection() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8, delay: 0.1, type: 'spring', stiffness: 75 }}
               className="flex items-center gap-2 my-2"
             >
@@ -149,12 +149,12 @@ export default function CommunitySection() {
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: 10, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
               className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5 w-full max-w-md"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
             >
-              <p className="font-nunito text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
+              <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
                 Be part of something exciting and fun! Connect with like-minded individuals, stay updated
                 on the latest developments, and participate in exclusive events. Whether you're a crypto
                 enthusiast, a creator, or just someone looking for a positive space, the Chipper community
@@ -181,7 +181,7 @@ export default function CommunitySection() {
             <motion.div
               initial={{ opacity: 0, y: -16, rotateZ: 3, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateZ: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
               className="mt-16 mb-4 flex shrink-0 justify-end"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
@@ -206,7 +206,7 @@ export default function CommunitySection() {
                 <motion.div
                   initial={{ opacity: 0, x: -30, scale: 0.9, rotateY: -20 }}
                   whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   animate={{ y: [0, -8, 0] }}
                   transition={{
                     duration: 0.8,
@@ -234,7 +234,7 @@ export default function CommunitySection() {
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.8, delay: 0.1, type: 'spring', stiffness: 75 }}
                   className="flex items-center gap-2"
                 >
@@ -276,12 +276,12 @@ export default function CommunitySection() {
               <motion.div
                 initial={{ opacity: 0, x: 30, rotateY: 20, scale: 0.9 }}
                 whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
                 className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
                 style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
               >
-                <p className="font-nunito text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
+                <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
                   Be part of something exciting and fun! Connect with like-minded individuals, stay updated
                   on the latest developments, and participate in exclusive events. Whether you're a crypto
                   enthusiast, a creator, or just someone looking for a positive space, the Chipper community
@@ -309,12 +309,12 @@ export default function CommunitySection() {
       <motion.footer
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6, delay: 0.3, type: 'spring', stiffness: 80 }}
         className="relative z-10 shrink-0 py-2"
         style={{ background: 'rgba(90,55,25,0.85)' }}
       >
-        <p className="text-center font-nunito text-xs font-bold tracking-wide text-white">
+        <p className="text-center font-bubblegum text-xs font-bold tracking-wide text-white">
           @2024 Chipper All Right Reserved
         </p>
       </motion.footer>
