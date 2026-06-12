@@ -128,7 +128,7 @@ export default function RoadmapSection() {
                   ease: 'easeInOut',
                 },
               }}
-              className="pointer-events-none z-10 w-[120px] sm:w-[180px]"
+              className="pointer-events-none z-10 w-[120px] sm:w-[180px] mx-auto self-center"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
             >
               <Image
