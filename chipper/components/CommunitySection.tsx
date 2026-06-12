@@ -75,7 +75,7 @@ export default function CommunitySection() {
       <Image src="/assets/beach.jpg.avif" alt="" fill sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,207,0.2),rgba(84,156,87,0.12)_50%,rgba(30,83,36,0.25))]" />
 
-      <div className="relative z-10 flex min-h-0 flex-1 flex-col px-4 pt-6 pb-0 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex min-h-0 flex-1 flex-col px-4 pt-6 pb-4 sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-7xl min-h-0 flex-1">
           {/* Mobile Layout */}
           <div className="flex flex-col items-center justify-between w-full h-full lg:hidden">
@@ -184,7 +184,7 @@ export default function CommunitySection() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
-                className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
+                className="rounded-[8px] border-2 border-black bg-white/95 p-4 pb-7 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5 sm:pb-8"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
@@ -317,7 +317,7 @@ export default function CommunitySection() {
                   whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
-                  className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
+                  className="rounded-[8px] border-2 border-black bg-white/95 p-4 pb-7 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5 sm:pb-8"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
