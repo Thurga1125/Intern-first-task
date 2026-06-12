@@ -48,6 +48,7 @@ export default function RoadmapSection() {
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               WebkitTextStroke: '1px #000',
               paintOrder: 'stroke fill',
+              textShadow: '2px 2px 0 rgba(0,0,0,0.65), 4px 4px 0 rgba(0,0,0,0.4), 6px 6px 10px rgba(0,0,0,0.2)',
             }}
           >
             Roadmap
@@ -69,11 +70,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 0 ? 'rotateX(5deg) translateZ(20px) scale(1.05)' : 'rotateX(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 0 ? 'rotateX(9deg) rotateY(-6deg) translateZ(32px) scale(1.06)' : 'rotateX(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 0 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 01</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[0].body}
@@ -93,11 +95,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 1 ? 'rotateX(5deg) translateZ(20px) scale(1.05)' : 'rotateX(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 1 ? 'rotateX(9deg) rotateY(6deg) translateZ(32px) scale(1.06)' : 'rotateX(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 1 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 02</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[1].body}
@@ -152,11 +155,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 2 ? 'rotateX(-5deg) translateZ(20px) scale(1.05)' : 'rotateX(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 2 ? 'rotateX(-9deg) rotateY(-6deg) translateZ(32px) scale(1.06)' : 'rotateX(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 2 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 03</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[2].body}
@@ -176,11 +180,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 3 ? 'rotateX(-5deg) translateZ(20px) scale(1.05)' : 'rotateX(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 3 ? 'rotateX(-9deg) rotateY(6deg) translateZ(32px) scale(1.06)' : 'rotateX(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 3 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 04</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[3].body}
@@ -203,11 +208,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 0 ? 'rotateY(5deg) translateZ(20px) scale(1.05)' : 'rotateY(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 0 ? 'rotateY(9deg) rotateX(-4deg) translateZ(32px) scale(1.06)' : 'rotateY(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 0 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 01</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[0].body}
@@ -227,11 +233,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 1 ? 'rotateY(-5deg) translateZ(20px) scale(1.05)' : 'rotateY(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 1 ? 'rotateY(-9deg) rotateX(-4deg) translateZ(32px) scale(1.06)' : 'rotateY(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 1 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 02</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[1].body}
@@ -251,11 +258,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 2 ? 'rotateY(5deg) translateZ(20px) scale(1.05)' : 'rotateY(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 2 ? 'rotateY(9deg) rotateX(4deg) translateZ(32px) scale(1.06)' : 'rotateY(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 2 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 03</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[2].body}
@@ -275,11 +283,12 @@ export default function RoadmapSection() {
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: 1000,
-                transform: hoveredPhase === 3 ? 'rotateY(-5deg) translateZ(20px) scale(1.05)' : 'rotateY(0deg) translateZ(0px) scale(1)',
-                transition: 'transform 0.3s ease',
+                transform: hoveredPhase === 3 ? 'rotateY(-9deg) rotateX(4deg) translateZ(32px) scale(1.06)' : 'rotateY(0deg) translateZ(0px) scale(1)',
+                boxShadow: hoveredPhase === 3 ? '0 20px 0 rgba(0,0,0,0.26), 0 20px 36px rgba(0,0,0,0.16)' : '0 6px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)]">
+              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
                 <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 04</h3>
                 <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
                   {phases[3].body}

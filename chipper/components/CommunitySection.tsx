@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CONTRACT_ADDRESS = '0x71297312753EA7A2570a5a3278eD';
 
@@ -28,6 +28,34 @@ function XIcon() {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
+  );
+}
+
+function CommunityCard({ children, className }: { children: React.ReactNode; className?: string }) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const bMX = useMotionValue(0);
+  const bMY = useMotionValue(0);
+  const bRotX = useSpring(bMY, { stiffness: 140, damping: 20 });
+  const bRotY = useSpring(bMX, { stiffness: 140, damping: 20 });
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!boxRef.current) return;
+    const r = boxRef.current.getBoundingClientRect();
+    bMX.set(((e.clientX - r.left) / r.width - 0.5) * 14);
+    bMY.set(((e.clientY - r.top) / r.height - 0.5) * -14);
+  };
+  const onLeave = () => { bMX.set(0); bMY.set(0); };
+
+  return (
+    <motion.div
+      ref={boxRef}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{ rotateX: bRotX, rotateY: bRotY, transformStyle: 'preserve-3d', perspective: 800 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -116,13 +144,15 @@ export default function CommunitySection() {
                 aria-label="Telegram"
                 onMouseEnter={() => setIsSocialHovered('telegram')}
                 onMouseLeave={() => setIsSocialHovered(null)}
-                whileHover={{ scale: 1.15, y: -5, rotateZ: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black shadow-[0_4px_0_rgba(0,0,0,0.18)]"
+                whileHover={{ scale: 1.2, y: -7, rotateZ: 8 }}
+                whileTap={{ scale: 0.88 }}
+                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black"
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: 1000,
-                  transform: isSocialHovered === 'telegram' ? 'rotateY(10deg) translateZ(15px)' : 'rotateY(0deg) translateZ(0px)',
+                  boxShadow: isSocialHovered === 'telegram' ? '0 14px 0 rgba(0,0,0,0.28), 0 14px 24px rgba(0,0,0,0.18)' : '0 4px 0 rgba(0,0,0,0.18)',
+                  transform: isSocialHovered === 'telegram' ? 'rotateY(18deg) rotateX(-5deg) translateZ(20px)' : 'rotateY(0deg) translateZ(0px)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 }}
               >
                 <TelegramIcon />
@@ -132,13 +162,15 @@ export default function CommunitySection() {
                 aria-label="X (Twitter)"
                 onMouseEnter={() => setIsSocialHovered('x')}
                 onMouseLeave={() => setIsSocialHovered(null)}
-                whileHover={{ scale: 1.15, y: -5, rotateZ: -5 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black shadow-[0_4px_0_rgba(0,0,0,0.18)]"
+                whileHover={{ scale: 1.2, y: -7, rotateZ: -8 }}
+                whileTap={{ scale: 0.88 }}
+                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black"
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: 1000,
-                  transform: isSocialHovered === 'x' ? 'rotateY(-10deg) translateZ(15px)' : 'rotateY(0deg) translateZ(0px)',
+                  boxShadow: isSocialHovered === 'x' ? '0 14px 0 rgba(0,0,0,0.28), 0 14px 24px rgba(0,0,0,0.18)' : '0 4px 0 rgba(0,0,0,0.18)',
+                  transform: isSocialHovered === 'x' ? 'rotateY(-18deg) rotateX(-5deg) translateZ(20px)' : 'rotateY(0deg) translateZ(0px)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 }}
               >
                 <XIcon />
@@ -146,34 +178,36 @@ export default function CommunitySection() {
             </motion.div>
 
             {/* Community Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20, rotateX: 10, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
-              className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5 w-full max-w-md"
-              style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-            >
-              <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
-                Be part of something exciting and fun! Connect with like-minded individuals, stay updated
-                on the latest developments, and participate in exclusive events. Whether you're a crypto
-                enthusiast, a creator, or just someone looking for a positive space, the Chipper community
-                is where the action is.
-              </p>
-              <motion.button
-                whileHover={{
-                  scale: 1.08,
-                  y: -4,
-                  rotateX: 5,
-                  boxShadow: '0 12px 0 rgba(0,0,0,0.28)',
-                }}
-                whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
-                className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:text-xl"
-                style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+            <CommunityCard className="w-full max-w-md">
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
+                className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                Join Community
-              </motion.button>
-            </motion.div>
+                <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
+                  Be part of something exciting and fun! Connect with like-minded individuals, stay updated
+                  on the latest developments, and participate in exclusive events. Whether you&apos;re a crypto
+                  enthusiast, a creator, or just someone looking for a positive space, the Chipper community
+                  is where the action is.
+                </p>
+                <motion.button
+                  whileHover={{
+                    scale: 1.08,
+                    y: -4,
+                    rotateX: 6,
+                    boxShadow: '0 16px 0 rgba(0,0,0,0.3)',
+                  }}
+                  whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
+                  className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:text-xl"
+                  style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                >
+                  Join Community
+                </motion.button>
+              </motion.div>
+            </CommunityCard>
           </div>
 
           {/* Desktop Layout */}
@@ -241,15 +275,17 @@ export default function CommunitySection() {
                   <motion.a
                     href="#"
                     aria-label="Telegram"
-                    onMouseEnter={() => setIsSocialHovered('telegram')}
+                    onMouseEnter={() => setIsSocialHovered('telegram-d')}
                     onMouseLeave={() => setIsSocialHovered(null)}
-                    whileHover={{ scale: 1.15, y: -5, rotateZ: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black shadow-[0_4px_0_rgba(0,0,0,0.18)]"
+                    whileHover={{ scale: 1.2, y: -7, rotateZ: 8 }}
+                    whileTap={{ scale: 0.88 }}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black"
                     style={{
                       transformStyle: 'preserve-3d',
                       perspective: 1000,
-                      transform: isSocialHovered === 'telegram' ? 'rotateY(10deg) translateZ(15px)' : 'rotateY(0deg) translateZ(0px)',
+                      boxShadow: isSocialHovered === 'telegram-d' ? '0 14px 0 rgba(0,0,0,0.28), 0 14px 24px rgba(0,0,0,0.18)' : '0 4px 0 rgba(0,0,0,0.18)',
+                      transform: isSocialHovered === 'telegram-d' ? 'rotateY(18deg) rotateX(-5deg) translateZ(20px)' : 'rotateY(0deg) translateZ(0px)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                   >
                     <TelegramIcon />
@@ -257,15 +293,17 @@ export default function CommunitySection() {
                   <motion.a
                     href="#"
                     aria-label="X (Twitter)"
-                    onMouseEnter={() => setIsSocialHovered('x')}
+                    onMouseEnter={() => setIsSocialHovered('x-d')}
                     onMouseLeave={() => setIsSocialHovered(null)}
-                    whileHover={{ scale: 1.15, y: -5, rotateZ: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black shadow-[0_4px_0_rgba(0,0,0,0.18)]"
+                    whileHover={{ scale: 1.2, y: -7, rotateZ: -8 }}
+                    whileTap={{ scale: 0.88 }}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-black bg-white text-black"
                     style={{
                       transformStyle: 'preserve-3d',
                       perspective: 1000,
-                      transform: isSocialHovered === 'x' ? 'rotateY(-10deg) translateZ(15px)' : 'rotateY(0deg) translateZ(0px)',
+                      boxShadow: isSocialHovered === 'x-d' ? '0 14px 0 rgba(0,0,0,0.28), 0 14px 24px rgba(0,0,0,0.18)' : '0 4px 0 rgba(0,0,0,0.18)',
+                      transform: isSocialHovered === 'x-d' ? 'rotateY(-18deg) rotateX(-5deg) translateZ(20px)' : 'rotateY(0deg) translateZ(0px)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                   >
                     <XIcon />
@@ -273,34 +311,36 @@ export default function CommunitySection() {
                 </motion.div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30, rotateY: 20, scale: 0.9 }}
-                whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
-                className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
-                style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-              >
-                <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
-                  Be part of something exciting and fun! Connect with like-minded individuals, stay updated
-                  on the latest developments, and participate in exclusive events. Whether you're a crypto
-                  enthusiast, a creator, or just someone looking for a positive space, the Chipper community
-                  is where the action is.
-                </p>
-                <motion.button
-                  whileHover={{
-                    scale: 1.08,
-                    y: -4,
-                    rotateX: 5,
-                    boxShadow: '0 12px 0 rgba(0,0,0,0.28)',
-                  }}
-                  whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
-                  className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:w-auto sm:text-xl"
-                  style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+              <CommunityCard>
+                <motion.div
+                  initial={{ opacity: 0, x: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 70 }}
+                  className="rounded-[8px] border-2 border-black bg-white/95 p-4 shadow-[0_10px_0_rgba(0,0,0,0.2)] sm:p-5"
+                  style={{ transformStyle: 'preserve-3d' }}
                 >
-                  Join Community
-                </motion.button>
-              </motion.div>
+                  <p className="font-bubblegum text-sm font-extrabold leading-snug text-[#291b0c] sm:text-base">
+                    Be part of something exciting and fun! Connect with like-minded individuals, stay updated
+                    on the latest developments, and participate in exclusive events. Whether you&apos;re a crypto
+                    enthusiast, a creator, or just someone looking for a positive space, the Chipper community
+                    is where the action is.
+                  </p>
+                  <motion.button
+                    whileHover={{
+                      scale: 1.08,
+                      y: -4,
+                      rotateX: 6,
+                      boxShadow: '0 16px 0 rgba(0,0,0,0.3)',
+                    }}
+                    whileTap={{ scale: 0.92, y: 0, boxShadow: '0 4px 0 rgba(0,0,0,0.22)' }}
+                    className="btn-ripple mt-3 w-full rounded-[8px] bg-[#FFE234] px-6 py-3 font-bubblegum text-lg text-black shadow-[0_6px_0_rgba(0,0,0,0.24)] sm:w-auto sm:text-xl"
+                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                  >
+                    Join Community
+                  </motion.button>
+                </motion.div>
+              </CommunityCard>
             </div>
           </div>
         </div>

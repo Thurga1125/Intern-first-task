@@ -18,8 +18,8 @@ export default function HeroSection() {
     const centerY = rect.height / 2;
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-    const rotateXDeg = ((mouseY - centerY) / centerY) * 10;
-    const rotateYDeg = ((mouseX - centerX) / centerX) * 10;
+    const rotateXDeg = ((mouseY - centerY) / centerY) * 16;
+    const rotateYDeg = ((mouseX - centerX) / centerX) * 16;
     x.set(rotateYDeg);
     y.set(rotateXDeg);
   };
@@ -63,7 +63,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="z-20 w-full max-w-md mx-auto lg:absolute lg:top-24 lg:right-8 lg:mx-0"
           >
-            <div className="rounded-[8px] border-2 border-black bg-white/95 px-4 py-4 shadow-[0_8px_0_rgba(0,0,0,0.18)] sm:px-5 sm:py-5">
+            <div className="rounded-[8px] border-2 border-black bg-white/95 px-4 py-4 shadow-[0_8px_0_rgba(0,0,0,0.18)] transition-shadow duration-300 hover:shadow-[0_18px_0_rgba(0,0,0,0.24),0_20px_35px_rgba(0,0,0,0.15)] sm:px-5 sm:py-5">
               <p className="font-bubblegum text-sm font-semibold leading-normal text-[#24180a] sm:text-base">
                 Welcome to Chipper world! A place full of fun, smiles, and endless adventure.
                 Let&apos;s crack open some joy together! Join Chipper as he bounces through life, spreading positivity wherever he goes. Whether you&apos;re a creator, a collector, or just someone looking for a new adventure, Chipper is all about connecting like-minded individuals through unique experiences. Get ready for a delightful journey with our new favorite character!
@@ -120,7 +120,7 @@ export default function HeroSection() {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <span style={{ fontSize: 'clamp(3rem, 10vw, 6rem)', WebkitTextStroke: '2px #000', paintOrder: 'stroke fill', opacity: 0.92 }}>
+            <span style={{ fontSize: 'clamp(3rem, 10vw, 6rem)', WebkitTextStroke: '2px #000', paintOrder: 'stroke fill', opacity: 0.92, textShadow: '2px 2px 0 rgba(0,0,0,0.75), 4px 4px 0 rgba(0,0,0,0.55), 6px 6px 0 rgba(0,0,0,0.35), 8px 8px 14px rgba(0,0,0,0.2)' }}>
               CHIPPER
             </span>
           </motion.h1>

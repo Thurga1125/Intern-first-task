@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useState, useRef } from 'react';
 
 const steps = [
   {
@@ -25,6 +25,20 @@ const steps = [
 export default function HowToBuySection() {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gMX = useMotionValue(0);
+  const gMY = useMotionValue(0);
+  const gRotX = useSpring(gMY, { stiffness: 120, damping: 20 });
+  const gRotY = useSpring(gMX, { stiffness: 120, damping: 20 });
+
+  const onGridMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!gridRef.current) return;
+    const r = gridRef.current.getBoundingClientRect();
+    gMX.set(((e.clientX - r.left) / r.width - 0.5) * 12);
+    gMY.set(((e.clientY - r.top) / r.height - 0.5) * -12);
+  };
+  const onGridLeave = () => { gMX.set(0); gMY.set(0); };
+
   return (
     <section id="how-to-buy" className="section-screen relative snap-start">
       <Image src="/assets/sand.jpeg" alt="" fill sizes="100vw" className="object-cover" />
@@ -43,6 +57,7 @@ export default function HowToBuySection() {
             paintOrder: 'stroke fill',
             transformStyle: 'preserve-3d',
             perspective: 1000,
+            textShadow: '2px 2px 0 rgba(0,0,0,0.65), 4px 4px 0 rgba(0,0,0,0.4), 6px 6px 10px rgba(0,0,0,0.2)',
           }}
         >
           How to Buy
@@ -66,7 +81,13 @@ export default function HowToBuySection() {
             />
           </motion.div>
 
-          <div className="grid min-h-0 gap-2 grid-cols-1 lg:grid-cols-3 lg:gap-5">
+          <motion.div
+            ref={gridRef}
+            onMouseMove={onGridMove}
+            onMouseLeave={onGridLeave}
+            style={{ rotateX: gRotX, rotateY: gRotY, transformStyle: 'preserve-3d', perspective: 900 }}
+            className="grid min-h-0 gap-2 grid-cols-1 lg:grid-cols-3 lg:gap-5 w-full"
+          >
             {steps.map((step, i) => (
               <motion.div
                 key={step.num}
@@ -76,14 +97,17 @@ export default function HowToBuySection() {
                 transition={{ duration: 0.6, delay: i * 0.15, type: 'spring', stiffness: 82 }}
                 onMouseEnter={() => setHoveredStep(i)}
                 onMouseLeave={() => setHoveredStep(null)}
-                className="rounded-[8px] border-2 border-black bg-white/95 p-3 sm:p-4 shadow-[0_6px_0_rgba(0,0,0,0.18)] cursor-pointer"
+                className="rounded-[8px] border-2 border-black bg-white/95 p-3 sm:p-4 cursor-pointer"
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: 1000,
                   transform: hoveredStep === i
-                    ? 'rotateX(10deg) translateZ(25px) translateY(-12px) scale(1.06)'
+                    ? 'rotateX(10deg) rotateY(6deg) translateZ(48px) translateY(-14px) scale(1.07)'
                     : 'rotateX(0deg) translateZ(0px) translateY(0px) scale(1)',
-                  transition: 'transform 0.35s ease',
+                  boxShadow: hoveredStep === i
+                    ? '0 24px 0 rgba(0,0,0,0.26), 0 24px 42px rgba(0,0,0,0.18)'
+                    : '0 6px 0 rgba(0,0,0,0.18)',
+                  transition: 'transform 0.35s ease, box-shadow 0.35s ease',
                 }}
               >
                 <motion.span
@@ -103,7 +127,7 @@ export default function HowToBuySection() {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
