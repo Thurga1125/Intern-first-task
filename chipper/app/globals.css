@@ -32,6 +32,15 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 1023px) {
+  #roadmap.section-screen {
+    height: auto;
+    min-height: 100dvh;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 .section-inner {
   display: flex;
   height: 100%;

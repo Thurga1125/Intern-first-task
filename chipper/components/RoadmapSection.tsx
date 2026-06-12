@@ -57,7 +57,7 @@ export default function RoadmapSection() {
 
         <div className="relative min-h-0 flex-1">
           {/* Mobile Layout */}
-          <div className="flex flex-col items-center justify-between py-2 h-full lg:hidden">
+          <div className="flex flex-col items-center gap-2 py-2 lg:hidden">
             {/* Phase 01 */}
             <motion.div
               initial={{ opacity: 0, y: -20, rotateX: -20, scale: 0.9 }}
@@ -75,9 +75,9 @@ export default function RoadmapSection() {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
-                <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 01</h3>
-                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+              <div className="rounded-[20px] border-2 border-black bg-white p-2">
+                <h3 className="font-bubblegum text-base text-black text-center">Phase 01</h3>
+                <p className="mt-1 font-bubblegum text-xs font-semibold leading-snug text-[#33230f] text-center">
                   {phases[0].body}
                 </p>
               </div>
@@ -100,9 +100,9 @@ export default function RoadmapSection() {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
-                <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 02</h3>
-                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+              <div className="rounded-[20px] border-2 border-black bg-white p-2">
+                <h3 className="font-bubblegum text-base text-black text-center">Phase 02</h3>
+                <p className="mt-1 font-bubblegum text-xs font-semibold leading-snug text-[#33230f] text-center">
                   {phases[1].body}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function RoadmapSection() {
                   ease: 'easeInOut',
                 },
               }}
-              className="pointer-events-none z-10 w-[120px] sm:w-[180px] mx-auto self-center"
+              className="pointer-events-none z-10 w-[80px] mx-auto self-center"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
             >
               <Image
@@ -160,9 +160,9 @@ export default function RoadmapSection() {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
-                <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 03</h3>
-                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+              <div className="rounded-[20px] border-2 border-black bg-white p-2">
+                <h3 className="font-bubblegum text-base text-black text-center">Phase 03</h3>
+                <p className="mt-1 font-bubblegum text-xs font-semibold leading-snug text-[#33230f] text-center">
                   {phases[2].body}
                 </p>
               </div>
@@ -185,9 +185,9 @@ export default function RoadmapSection() {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              <div className="rounded-[20px] border-2 border-black bg-white p-3 sm:p-4">
-                <h3 className="font-bubblegum text-lg sm:text-xl text-black text-center">Phase 04</h3>
-                <p className="mt-2 font-bubblegum text-sm sm:text-base font-semibold leading-snug text-[#33230f] text-center">
+              <div className="rounded-[20px] border-2 border-black bg-white p-2">
+                <h3 className="font-bubblegum text-base text-black text-center">Phase 04</h3>
+                <p className="mt-1 font-bubblegum text-xs font-semibold leading-snug text-[#33230f] text-center">
                   {phases[3].body}
                 </p>
               </div>
