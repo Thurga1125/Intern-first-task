@@ -57,7 +57,7 @@ export default function RoadmapSection() {
 
         <div className="relative min-h-0 flex-1">
           {/* Mobile Layout */}
-          <div className="flex flex-col items-center gap-2 py-2 lg:hidden">
+          <div className="flex flex-col items-center gap-2 pt-8 pb-2 lg:hidden">
             {/* Phase 01 */}
             <motion.div
               initial={{ opacity: 0, y: -20, rotateX: -20, scale: 0.9 }}
@@ -131,7 +131,7 @@ export default function RoadmapSection() {
                   ease: 'easeInOut',
                 },
               }}
-              className="pointer-events-none z-10 w-[80px] mx-auto self-center"
+              className="pointer-events-none z-10 w-[130px] mx-auto self-center"
               style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
             >
               <Image
