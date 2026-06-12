@@ -39,6 +39,9 @@ body {
     max-height: none;
     overflow: visible;
   }
+  #roadmap .section-inner {
+    padding-top: 5rem;
+  }
 }
 
 .section-inner {
